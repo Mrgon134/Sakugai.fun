@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #0a0a0f;
+    color: #e8e6e3;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  ::selection {
+    background-color: rgba(200, 164, 78, 0.25);
+    color: #e8e6e3;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(16, 16, 24, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(35, 35, 48, 0.8);
+  }
+
+  .glass-subtle {
+    background: rgba(16, 16, 24, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(35, 35, 48, 0.5);
+  }
+
+  .accent-glow {
+    box-shadow: 0 0 40px rgba(200, 164, 78, 0.06), 0 0 80px rgba(200, 164, 78, 0.03);
+  }
+
+  .shimmer-bg {
+    background: linear-gradient(
+      110deg,
+      rgba(35, 35, 48, 0.5) 0%,
+      rgba(35, 35, 48, 0.8) 40%,
+      rgba(200, 164, 78, 0.05) 50%,
+      rgba(35, 35, 48, 0.8) 60%,
+      rgba(35, 35, 48, 0.5) 100%
+    );
+    background-size: 200% 100%;
+  }
+
+  .stagger-1 { animation-delay: 0.05s; }
+  .stagger-2 { animation-delay: 0.1s; }
+  .stagger-3 { animation-delay: 0.15s; }
+  .stagger-4 { animation-delay: 0.2s; }
+  .stagger-5 { animation-delay: 0.25s; }
+  .stagger-6 { animation-delay: 0.3s; }
+  .stagger-7 { animation-delay: 0.35s; }
+  .stagger-8 { animation-delay: 0.4s; }
+  .stagger-9 { animation-delay: 0.45s; }
+  .stagger-10 { animation-delay: 0.5s; }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(200, 164, 78, 0.15);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(200, 164, 78, 0.3);
+}
+
+.jup-wallet-landing button {
+  background: linear-gradient(135deg, #c8a44e 0%, #a68938 100%) !important;
+  padding: 1rem 2.5rem !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  border-radius: 0.75rem !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 4px 24px rgba(200, 164, 78, 0.15) !important;
+  letter-spacing: 0.02em !important;
+  border: 1px solid rgba(221, 185, 95, 0.3) !important;
+}
+
+.jup-wallet-landing button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 40px rgba(200, 164, 78, 0.25) !important;
+  background: linear-gradient(135deg, #ddb95f 0%, #c8a44e 100%) !important;
+}
+
+.jup-wallet-landing button:active {
+  transform: translateY(0) !important;
+}
+
+.jup-wallet-header button {
+  background: rgba(16, 16, 24, 0.6) !important;
+  border: 1px solid rgba(35, 35, 48, 0.8) !important;
+  border-radius: 0.5rem !important;
+  padding: 0.5rem 1rem !important;
+  font-size: 0.8125rem !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  letter-spacing: 0.01em !important;
+}
+
+.jup-wallet-header button:hover {
+  border-color: rgba(200, 164, 78, 0.3) !important;
+  background: rgba(22, 22, 31, 0.8) !important;
+}
