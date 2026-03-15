@@ -14,11 +14,13 @@ export interface GenerateVideoParams {
   onProgress?: (info: { queuePosition?: number; falStatus?: string }) => void;
 }
 
-const BASE_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/generate`;
+import { SUPABASE_URL, SUPABASE_ANON_KEY } from '../lib/supabase';
+
+const BASE_URL = `${SUPABASE_URL}/functions/v1/generate`;
 
 const headers = {
   'Content-Type': 'application/json',
-  'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+  'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
 };
 
 async function parseResponse(response: Response): Promise<any> {

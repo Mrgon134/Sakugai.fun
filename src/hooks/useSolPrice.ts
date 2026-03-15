@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
+import { SUPABASE_URL, SUPABASE_ANON_KEY } from '../lib/supabase';
 
-const EDGE_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/generate`;
+const EDGE_URL = `${SUPABASE_URL}/functions/v1/generate`;
 const EDGE_HEADERS = {
   'Content-Type': 'application/json',
-  'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+  'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
 };
 const REFRESH_INTERVAL = 60_000;
 

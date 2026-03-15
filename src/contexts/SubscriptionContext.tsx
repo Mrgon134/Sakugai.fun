@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect, useCallback, ReactNode } from 'react';
+import { SUPABASE_URL, SUPABASE_ANON_KEY } from '../lib/supabase';
 
 export interface Subscription {
   id: string;
@@ -30,10 +31,10 @@ interface SubscriptionContextType {
 
 const SubscriptionContext = createContext<SubscriptionContextType | undefined>(undefined);
 
-const BASE_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1`;
+const BASE_URL = `${SUPABASE_URL}/functions/v1`;
 const HEADERS = {
   'Content-Type': 'application/json',
-  'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+  'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
 };
 
 const EMAIL_KEY = 'sakugai_sub_email';
